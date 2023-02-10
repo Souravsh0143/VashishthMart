@@ -37,7 +37,10 @@ import UserEditScreen from './screens/UserEditScreen';
 import ForgotPassword from './screens/ForgotPassword';
 import ContactUs from './screens/ContactUs';
 import GooglePay from './screens/GooglePayScreen';
+import TermsofService from './screens/TermsofService';
 import Russian from './screens/Russian';
+import PrivacyPolicy from './screens/PrivacyPolicy';
+import Refund from './screens/Refund';
 import {
   MDBFooter,
   MDBContainer,
@@ -187,6 +190,9 @@ function App() {
               <Route path="/russian" element={<Russian />} />
               <Route path="/contactus" element={<ContactUs />} />
               <Route path="/googlepay" element={<GooglePay />} />
+              <Route path="/termsofservice" element={<TermsofService />} />
+              <Route path="/privacypolicy" element={<PrivacyPolicy />} />
+              <Route path="/refund" element={<Refund />} />
               <Route
                 path="/profile"
                 element={
@@ -336,18 +342,18 @@ function App() {
                   <MDBCol md="2" lg="2" xl="2" className="mx-auto mb-4">
                     <h6 className="text-uppercase fw-bold mb-4">Products</h6>
                     <p>
-                      <Link to="#!" className="text-reset">
-                        Smartphones
+                      <Link to="/termsofservice" className="text-reset">
+                        Terms of Service
                       </Link>
                     </p>
                     <p>
-                      <Link to="#!" className="text-reset">
-                        Computer Accessories
+                      <Link to="/privacypolicy" className="text-reset">
+                        Privacy Policy
                       </Link>
                     </p>
                     <p>
-                      <Link to="#!" className="text-reset">
-                        Mobile Accessories
+                      <Link to="/refund" className="text-reset">
+                        Cancellation and Refund Policy
                       </Link>
                     </p>
                     <p>
@@ -411,9 +417,6 @@ function App() {
             >
               © 2023 VashishthMart - All Rights Reserved || Powered by
               Vashishthweb
-              <a className="text-reset fw-bold" href="https://mdbootstrap.com/">
-                VashishthMart
-              </a>
             </div>
           </MDBFooter>
           {/* <div
