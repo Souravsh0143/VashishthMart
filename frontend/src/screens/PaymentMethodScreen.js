@@ -41,18 +41,23 @@ export default function PaymentMethodScreen() {
         <Helmet>
           <title>Payment Method</title>
         </Helmet>
-        <h1 className="my-3">Payment Method</h1>
+        <h1 className="my-3">Payment Method </h1>
+        <h4>
+          Note : Only Paypal Method is working at the moment. All options will
+          be activated in a few days
+        </h4>
+
         <Form onSubmit={submitHandler}>
-          {/* <div className="mb-3">
+          <div className="mb-3">
             <Form.Check
               type="radio"
               id="PayPal"
-              label="PayPal"
+              label="PayPal "
               value="PayPal"
               checked={paymentMethodName === 'PayPal'}
               onChange={(e) => setPaymentMethod(e.target.value)}
             />
-          </div> */}
+          </div>
           {/* <div className="mb-3">
             <Form.Check
               type="radio"
@@ -83,11 +88,11 @@ export default function PaymentMethodScreen() {
               onChange={(e) => setPaymentMethod(e.target.value)}
             />
           </div>
-          {/* <div className="mb-3">
+          <div className="mb-3">
             <Form.Check
               type="radio"
               id="Phonepe"
-              label="Phonepe"
+              label="Phonepe (Not working during this time)"
               value="Phonepe"
               checked={paymentMethodName === 'Phonepe'}
               onChange={(e) => setPaymentMethod(e.target.value)}
@@ -104,7 +109,7 @@ export default function PaymentMethodScreen() {
             />
           </div>
 
-          <div className="mb-3">
+          {/* <div className="mb-3">
             <Form.Check
               type="radio"
               id="Amazon"
@@ -113,9 +118,9 @@ export default function PaymentMethodScreen() {
               checked={paymentMethodName === 'Amazon'}
               onChange={(e) => setPaymentMethod(e.target.value)}
             />
-          </div>
+          </div> */}
 
-          <div className="mb-3">
+          {/* <div className="mb-3">
             <Form.Check
               type="radio"
               id="Freecharge"

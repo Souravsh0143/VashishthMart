@@ -212,7 +212,9 @@ export default function OrderScreen() {
               <Card.Text>
                 <strong>Name:</strong> {order.shippingAddress.fullName} <br />
                 <strong>Address: </strong> {order.shippingAddress.address},
+                <br />
                 {order.shippingAddress.city}, {order.shippingAddress.postalCode}
+                <br />
                 <strong>Mobile Number: </strong>
                 {order.shippingAddress.mobileNumber}, &nbsp;
               </Card.Text>
@@ -367,13 +369,13 @@ export default function OrderScreen() {
                           </a>
                         </Button> */}
                         {/* <br />
-                        <br />
+                        <br /> */}
 
                         <PayPalButtons
                           createOrder={createOrder}
                           onApprove={onApprove}
                           onError={onError}
-                        ></PayPalButtons> */}
+                        ></PayPalButtons>
                       </div>
                     )}
                     {loadingPay && <LoadingBox></LoadingBox>}
