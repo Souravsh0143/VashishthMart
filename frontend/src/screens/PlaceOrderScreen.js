@@ -40,14 +40,14 @@ export default function PlaceOrderScreen() {
   cart.itemsPrice = round2(
     cart.cartItems.reduce((a, c) => a + c.quantity * c.price, 0)
   );
-  cart.shippingPrice = cart.itemsPrice > 500 ? round2(0) : round2(10);
-  cart.taxPrice = round2(0.0 * cart.itemsPrice);
-  cart.totalPrice = cart.itemsPrice + cart.shippingPrice + cart.taxPrice;
+  // cart.shippingPrice = cart.itemsPrice < 500 ? round2(0) : round2(0);
+  // cart.taxPrice = round2(0.09 * cart.itemsPrice);
+  cart.totalPrice = cart.itemsPrice;
+  //  + cart.shippingPrice + cart.taxPrice;
 
   const placeOrderHandler = async () => {
     try {
       dispatch({ type: 'CREATE_REQUEST' });
-
       const { data } = await Axios.post(
         '/api/orders',
         {
@@ -55,8 +55,8 @@ export default function PlaceOrderScreen() {
           shippingAddress: cart.shippingAddress,
           paymentMethod: cart.paymentMethod,
           itemsPrice: cart.itemsPrice,
-          shippingPrice: cart.shippingPrice,
-          taxPrice: cart.taxPrice,
+          // shippingPrice: cart.shippingPrice,
+          // taxPrice: cart.taxPrice,
           totalPrice: cart.totalPrice,
         },
         {
@@ -157,16 +157,16 @@ export default function PlaceOrderScreen() {
                 </ListGroup.Item>
                 <ListGroup.Item>
                   <Row>
-                    <Col>Shipping</Col>
-                    <Col>₹{cart.shippingPrice.toFixed(2)}</Col>
+                    <Col>Free Shipping</Col>
+                    <Col>₹0.00</Col>
                   </Row>
                 </ListGroup.Item>
-                <ListGroup.Item>
+                {/* <ListGroup.Item>
                   <Row>
-                    <Col>Tax</Col>
+                    <Col>Shipping Charges</Col>
                     <Col>₹{cart.taxPrice.toFixed(2)}</Col>
                   </Row>
-                </ListGroup.Item>
+                </ListGroup.Item> */}
                 <ListGroup.Item>
                   <Row>
                     <Col>

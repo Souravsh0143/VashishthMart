@@ -7,6 +7,7 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { StoreProvider } from './Store';
+import GooglePay from './screens/GooglePayScreen';
 
 const root = createRoot(document.getElementById('root'));
 
@@ -15,7 +16,9 @@ root.render(
     <StoreProvider>
       <HelmetProvider>
         <PayPalScriptProvider deferLoading={true}>
+          {/* <GooglePay deferLoading={true}> */}
           <App />
+          {/* </GooglePay> */}
         </PayPalScriptProvider>
       </HelmetProvider>
     </StoreProvider>

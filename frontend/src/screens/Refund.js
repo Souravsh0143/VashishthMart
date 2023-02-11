@@ -1,8 +1,12 @@
 import React from 'react';
+import { Helmet } from 'react-helmet-async';
 
 const Refund = () => {
   return (
     <div>
+      <Helmet>
+        <title>Cancellation and Refund Policy</title>
+      </Helmet>
       <h1>Cancellation and Refund Policy</h1>
       <p>
         Do you have questions about the VashishthMart returns policy? This

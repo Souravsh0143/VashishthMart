@@ -99,19 +99,32 @@ function App() {
               <LinkContainer to="/">
                 <Navbar.Brand>VashishthMart</Navbar.Brand>
               </LinkContainer>
-              <Link to="/contactus"> Contact Us </Link> &nbsp;
+              <Nav className="me-auto">
+                <Link to="/cart" className="nav-link">
+                  <i className="fas fa-cart-plus" />
+                  {cart.cartItems.length > 0 && (
+                    <Badge pill bg="success">
+                      {cart.cartItems.length}
+                    </Badge>
+                  )}
+                </Link>
+              </Nav>
+              {/* <Link className="linkstyle" to="/contactus">
+                Contact Us
+              </Link>
+              &nbsp; */}
               <Navbar.Toggle aria-controls="basic-navbar-nav" />
               <Navbar.Collapse id="basic-navbar-nav">
                 <SearchBox />
                 <Nav className="me-auto  w-100  justify-content-end">
-                  <Link to="/cart" className="nav-link">
+                  {/* <Link to="/cart" className="nav-link">
                     Cart
                     {cart.cartItems.length > 0 && (
                       <Badge pill bg="danger">
                         {cart.cartItems.reduce((a, c) => a + c.quantity, 0)}
                       </Badge>
                     )}
-                  </Link>
+                  </Link> */}
                   {userInfo ? (
                     <NavDropdown title={userInfo.name} id="basic-nav-dropdown">
                       <LinkContainer to="/profile">
@@ -291,7 +304,7 @@ function App() {
               <div>
                 <Link
                   to="https://www/facebook.com/vashishthmart"
-                  className="me-4 text-reset"
+                  className="me-4 text-reset "
                 >
                   <MDBIcon fab icon="facebook-f" />
                 </Link>
@@ -344,22 +357,28 @@ function App() {
                       VashishthMart Service
                     </h6>
                     <p>
-                      <Link to="/termsofservice" className="text-reset">
+                      <Link
+                        to="/termsofservice"
+                        className="text-reset linkstyle"
+                      >
                         Terms of Service
                       </Link>
                     </p>
                     <p>
-                      <Link to="/privacypolicy" className="text-reset">
+                      <Link
+                        to="/privacypolicy"
+                        className="text-reset  linkstyle"
+                      >
                         Privacy Policy
                       </Link>
                     </p>
                     <p>
-                      <Link to="/refund" className="text-reset">
+                      <Link to="/refund" className="text-reset linkstyle">
                         Cancellation and Refund Policy
                       </Link>
                     </p>
                     <p>
-                      <Link to="/russian" className="text-reset">
+                      <Link to="/russian" className="text-reset linkstyle">
                         Russian
                       </Link>
                     </p>
@@ -370,22 +389,22 @@ function App() {
                       Useful links
                     </h6>
                     <p>
-                      <Link to="#!" className="text-reset">
-                        Nothing
+                      <Link to="/signin" className="text-reset linkstyle">
+                        Signin
                       </Link>
                     </p>
                     <p>
-                      <Link to="/profile" className="text-reset">
+                      <Link to="/profile" className="text-reset linkstyle">
                         User Settings
                       </Link>
                     </p>
                     <p>
-                      <Link to="/orderhistory" className="text-reset">
+                      <Link to="/orderhistory" className="text-reset linkstyle">
                         Orders
                       </Link>
                     </p>
                     <p>
-                      <Link to="/contactus" className="text-reset">
+                      <Link to="/contactus" className="text-reset linkstyle">
                         Help
                       </Link>
                     </p>

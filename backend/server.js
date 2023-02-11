@@ -27,6 +27,10 @@ app.use(express.urlencoded({ extended: true }));
 app.get('/api/keys/paypal', (req, res) => {
   res.send(process.env.PAYPAL_CLIENT_ID || 'sb');
 });
+
+app.get('/api/keys/gpay', (req, res) => {
+  res.send(process.env.GOOGLE_PAY_MERCHANT_ID || '');
+});
 app.get('/api/keys/google', (req, res) => {
   res.send({ key: process.env.GOOGLE_API_KEY || '' });
 });

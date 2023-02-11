@@ -1,8 +1,12 @@
 import React from 'react';
+import { Helmet } from 'react-helmet-async';
 
 const PrivacyPolicy = () => {
   return (
     <div>
+      <Helmet>
+        <title>Privacy Policy</title>
+      </Helmet>
       <h1>Privacy Policy</h1>
       <p>
         At our VashishthMart shopping website, we take the privacy of our

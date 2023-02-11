@@ -1,7 +1,11 @@
 import React from 'react';
+import { Helmet } from 'react-helmet-async';
 
 const ContactUs = () => (
   <div>
+    <Helmet>
+      <title>Contact Us</title>
+    </Helmet>
     <h1>Support and Help 24x7</h1>
     <p>
       Thank you for visiting our website. If you have any questions or comments,

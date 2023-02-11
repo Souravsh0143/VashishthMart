@@ -1,8 +1,12 @@
 import React from 'react';
+import { Helmet } from 'react-helmet-async';
 
 const TermsofService = () => {
   return (
     <div>
+      <Helmet>
+        <title>Terms of Service</title>
+      </Helmet>
       <h1> Terms of Service</h1>
       <p>
         Welcome to our VashishthMart shopping website. By accessing or using our

@@ -1,9 +1,13 @@
 import { Button } from 'bootstrap';
 import React from 'react';
+import { Helmet } from 'react-helmet-async';
 
 const ForgotPassword = () => {
   return (
     <div>
+      <Helmet>
+        <title>Forgot Password </title>
+      </Helmet>
       <h1>Forgot Password Instructions</h1>
       <p>
         If you forgotten your password, then click on the send mail button given

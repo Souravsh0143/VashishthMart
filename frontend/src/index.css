@@ -14,8 +14,8 @@ main {
 }
 .btn-primary,
 .btn-outline-primary {
-  background-color: #f0c040;
-  color: #000000;
+  background-color: #14a44d;
+  color: #f9f8f8;
 }
 .products {
   display: flex;
@@ -137,4 +137,11 @@ button.thumbnail {
   font-size: 16px;
   margin: 0.4rem;
   cursor: pointer;
+}
+.linkstyle {
+  text-decoration: none;
+  color: rgb(167, 185, 218);
+}
+.linkstyle1 {
+  text-decoration: none;
 }
