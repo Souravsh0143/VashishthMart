@@ -85,7 +85,7 @@ function App() {
   }, []);
   return (
     <BrowserRouter>
-      <LoadingBar progress={progress} />
+      <LoadingBar height={5} color="#f11946" progress={progress} />
       <div
         className={
           sidebarIsOpen
