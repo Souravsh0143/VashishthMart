@@ -9,7 +9,7 @@ import Nav from 'react-bootstrap/Nav';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import Container from 'react-bootstrap/Container';
 import { LinkContainer } from 'react-router-bootstrap';
-import { useContext, useEffect, useState } from 'react';
+import { useContext, useEffect, useRef, useState } from 'react';
 import { Store } from './Store';
 import CartScreen from './screens/CartScreen';
 import SigninScreen from './screens/SigninScreen';
@@ -41,6 +41,7 @@ import TermsofService from './screens/TermsofService';
 import Russian from './screens/Russian';
 import PrivacyPolicy from './screens/PrivacyPolicy';
 import Refund from './screens/Refund';
+import LoadingBar from 'react-top-loading-bar';
 import {
   MDBFooter,
   MDBContainer,
@@ -53,6 +54,7 @@ function App() {
   const { fullBox, cart, userInfo } = state;
 
   const signoutHandler = () => {
+    toast.success('Logout Successfully' || 5000);
     ctxDispatch({ type: 'USER_SIGNOUT' });
     localStorage.removeItem('userInfo');
     localStorage.removeItem('shippingAddress');
@@ -61,6 +63,14 @@ function App() {
   };
   const [sidebarIsOpen, setSidebarIsOpen] = useState(false);
   const [categories, setCategories] = useState([]);
+  const [progress, setProgress] = useState(0);
+
+  const handleClick = () => {
+    setProgress(40);
+    setTimeout(() => {
+      setProgress(500);
+    }, 40);
+  };
 
   useEffect(() => {
     const fetchCategories = async () => {
@@ -75,6 +85,7 @@ function App() {
   }, []);
   return (
     <BrowserRouter>
+      <LoadingBar progress={progress} />
       <div
         className={
           sidebarIsOpen
@@ -360,6 +371,7 @@ function App() {
                       <Link
                         to="/termsofservice"
                         className="text-reset linkstyle"
+                        onClick={handleClick}
                       >
                         Terms of Service
                       </Link>
@@ -368,17 +380,26 @@ function App() {
                       <Link
                         to="/privacypolicy"
                         className="text-reset  linkstyle"
+                        onClick={handleClick}
                       >
                         Privacy Policy
                       </Link>
                     </p>
                     <p>
-                      <Link to="/refund" className="text-reset linkstyle">
+                      <Link
+                        to="/refund"
+                        className="text-reset linkstyle"
+                        onClick={handleClick}
+                      >
                         Cancellation and Refund Policy
                       </Link>
                     </p>
                     <p>
-                      <Link to="/russian" className="text-reset linkstyle">
+                      <Link
+                        to="/russian"
+                        className="text-reset linkstyle"
+                        onClick={handleClick}
+                      >
                         Russian
                       </Link>
                     </p>
@@ -389,22 +410,38 @@ function App() {
                       Useful links
                     </h6>
                     <p>
-                      <Link to="/signin" className="text-reset linkstyle">
+                      <Link
+                        to="/signin"
+                        className="text-reset linkstyle"
+                        onClick={handleClick}
+                      >
                         Signin
                       </Link>
                     </p>
                     <p>
-                      <Link to="/profile" className="text-reset linkstyle">
+                      <Link
+                        to="/profile"
+                        className="text-reset linkstyle"
+                        onClick={handleClick}
+                      >
                         User Settings
                       </Link>
                     </p>
                     <p>
-                      <Link to="/orderhistory" className="text-reset linkstyle">
+                      <Link
+                        to="/orderhistory"
+                        className="text-reset linkstyle"
+                        onClick={handleClick}
+                      >
                         Orders
                       </Link>
                     </p>
                     <p>
-                      <Link to="/contactus" className="text-reset linkstyle">
+                      <Link
+                        to="/contactus"
+                        className="text-reset linkstyle"
+                        onClick={handleClick}
+                      >
                         Help
                       </Link>
                     </p>
@@ -425,7 +462,10 @@ function App() {
                     </p>
                     <p>
                       <MDBIcon icon="print" className="me-3" />{' '}
-                      <Link to="/contactus"> Contact Us</Link>
+                      <Link to="/contactus" onClick={handleClick}>
+                        {' '}
+                        Contact Us
+                      </Link>
                     </p>
                   </MDBCol>
                 </MDBRow>

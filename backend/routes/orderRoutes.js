@@ -47,7 +47,7 @@ orderRouter.get(
         $group: {
           _id: null,
           numOrders: { $sum: 1 },
-          totalSales: { $sum: '$totalPrice' },
+          totalSales: { $sum: '₹totalPrice' },
         },
       },
     ]);
@@ -64,7 +64,7 @@ orderRouter.get(
         $group: {
           _id: { $dateToString: { format: '%Y-%m-%d', date: '$createdAt' } },
           orders: { $sum: 1 },
-          sales: { $sum: '$totalPrice' },
+          sales: { $sum: '₹totalPrice' },
         },
       },
       { $sort: { _id: 1 } },

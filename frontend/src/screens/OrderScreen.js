@@ -1,5 +1,5 @@
 import axios from 'axios';
-import React, { useContext, useEffect, useReducer } from 'react';
+import React, { useContext, useEffect, useReducer, useState } from 'react';
 import { PayPalButtons, usePayPalScriptReducer } from '@paypal/react-paypal-js';
 import { Helmet } from 'react-helmet-async';
 import { useNavigate, useParams } from 'react-router-dom';
@@ -16,11 +16,13 @@ import { getError } from '../utils';
 import { toast } from 'react-toastify';
 import GooglePayButton from '@google-pay/button-react';
 // import GooglePay from './GooglePayScreen';
-<script
+{
+  /* <script
   async
   src="https://pay.google.com/gp/p/js/pay.js"
   onload="console.log('TODO: add onload function')"
-></script>;
+></script>; */
+}
 
 function reducer(state, action) {
   switch (action.type) {
@@ -62,6 +64,115 @@ export default function OrderScreen() {
   const params = useParams();
   const { id: orderId } = params;
   const navigate = useNavigate();
+
+  // Razorpay Start
+  // const [ loading, setLoading] = useState(false);
+  // const [ orderAmount, setOrderAmount] = useState(0);
+  // const [ orders, setOrders] = useState([]);
+
+  // async function fetchOrders() {
+  //   const { data } = await axios.get('/list-orders');
+  //   setOrders(data);
+  // }
+  // useEffect(()=> {
+  //   fetchOrders();
+  // }, []);
+
+  // function loadRazorpay() {
+  //   const script = document.createElement('script');
+  //   script.src = 'https://checkout.razorpay.com/v1/checkout.js';
+  //   script.onerror = () => {
+  //     alert('Razorpay SDK failed to load. Are you online?');
+  //   };
+  //   script.onload = async () => {
+  //     try{
+  //       setLoading(true);
+  //       const result = await axios.post('/create-order', {
+  //         amount: orderAmount + '00',
+  //       });
+  //       const { amount, id: order_id, currency } = result.data;
+  //       const {
+  //         data: { key: razorpayKey},
+  //       } = await axios.get('/get-razorpay-key');
+  //       const options = {
+  //         key: razorpayKey,
+  //         amount: amount.toString(),
+  //         currency: currency,
+  //         name: 'example name',
+  //         description: 'example transaction',
+  //         order_id: order_id,
+  //         handler: async function (response){
+  //           const result = await axios.post('/pay-order', {
+  //             amount: amount,
+  //             razorpayPaymentId: response.razorpay_payment_id,
+  //             razorpayOrderId: response.razorpay_order_id,
+  //             razorpaySignature: response.razorpay_signature,
+  //           });
+  //           alert(result.data.msg);
+  //           fetchOrders();
+  //         },
+  //         prefill: {
+  //           name: 'example name',
+  //           email: 'email@example.com',
+  //           contact: '111111',
+  //         },
+  //         notes : {
+  //           address: 'example address',
+  //         },
+  //         theme : {
+  //           color: '#80c0f0'
+  //         },
+  //       };
+  //       setLoading(false);
+  //       const paymentObject = new window.Razorpay(options);
+  //       paymentObject.open();
+
+  //     } catch(err) {
+  //       alert(err);
+  //       setLoading(false);
+  //     }
+  //   }
+  //   document.body.appendChild(script);
+  // }
+
+  // <div>
+  // <label>
+  //   Amount:
+  //   <input
+  //   placeholder='INR'
+  //   type='number'
+  //   value={orderAmount}
+  //   onChange={(e) => setOrderAmount(e.target.value)}
+  //   >
+  //   </input>
+  // </label>
+  //   <button disabled={loading} onClick={loadRazorpay}>Razorpay</button>\
+  //   <h2>List Orders</h2>
+  //   <table>
+  //     <thead>
+  //       <tr>
+  //         <th>ID</th>
+  //         <th>AMOUNT</th>
+  //         <th>ISPAID</th>
+  //         <th>RAZORPAY</th>
+  //       </tr>
+  //     </thead>
+  //     <tbody>
+  //       {orders.map((x) => {
+  //         <tr key={x._id}>
+  //           <td>{x._id}</td>
+  //           <td>{x.amount /100}</td>
+  //           <td>{x.isPaid ? 'YES' : 'NO'}</td>
+  //           <td>{x.razorpay.paymentId}</td>
+  //         </tr>
+  //       })}
+  //     </tbody>
+  //   </table>
+  // </div>
+
+  // Razorpay end
+
+  // Paypal start
 
   const [
     {
@@ -194,6 +305,8 @@ export default function OrderScreen() {
     }
   }
 
+  // Paypal End
+
   return loading ? (
     <LoadingBox></LoadingBox>
   ) : error ? (
@@ -256,7 +369,12 @@ export default function OrderScreen() {
                           alt={item.name}
                           className="img-fluid rounded img-thumbnail"
                         ></img>{' '}
-                        <Link to={`/product/${item.slug}`}>{item.name}</Link>
+                        <Link
+                          className="linkstyle1"
+                          to={`/product/${item.slug}`}
+                        >
+                          {item.name}
+                        </Link>
                       </Col>
                       <Col md={3}>
                         <span>{item.quantity}</span>
@@ -308,7 +426,7 @@ export default function OrderScreen() {
                       <LoadingBox />
                     ) : (
                       <div>
-                        <GooglePayButton
+                        {/* <GooglePayButton
                           environment="TEST"
                           paymentRequest={{
                             apiVersion: 2,
@@ -351,9 +469,9 @@ export default function OrderScreen() {
                           // }}
                           onLoadPaymentData={(paymentRequest) => {
                             console.log('Success', paymentRequest);
-                          }}
-                          // onPaymentAuthorized={(paymentData) => {
-                          //   console.log(
+                          }} */}
+                        {/* // onPaymentAuthorized={(paymentData) => { */}
+                        {/* //   console.log(
                           //     'Payment Authorized Success',
                           //     paymentData
                           //   );
@@ -362,7 +480,7 @@ export default function OrderScreen() {
                           // existingPaymentMethodRequired="false"
                           // buttonColor="black"
                           // buttonType="Buy"
-                        />
+                        // /> */}
                         {/* <Button variant="primary">
                           <a href="upi://pay?pa=vashishthmart@okhdfcbank&pn=VashishthMart&tn=Payment Message&cu=INR">
                             Pay With Google Pay
@@ -378,7 +496,7 @@ export default function OrderScreen() {
                         ></PayPalButtons>
                       </div>
                     )}
-                    {loadingPay && <LoadingBox></LoadingBox>}
+                    ;{loadingPay && <LoadingBox></LoadingBox>}
                   </ListGroup.Item>
                 )}
                 {userInfo.isAdmin && order.isPaid && !order.isDelivered && (

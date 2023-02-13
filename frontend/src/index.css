@@ -130,12 +130,12 @@ button.thumbnail {
   background-color: #80cd05; /* Green */
   border: none;
   color: white;
-  padding: 15px 32px;
+  padding: 2px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
-  margin: 0.4rem;
+  margin: 0.3rem;
   cursor: pointer;
 }
 .linkstyle {
@@ -144,4 +144,16 @@ button.thumbnail {
 }
 .linkstyle1 {
   text-decoration: none;
+}
+.linkstyle3 {
+  text-decoration: none;
+  color: white;
+}
+.slide-up {
+  transform: translateY(100%);
+  transition: transform 0.5s ease-in-out;
+}
+
+.slide-up.visible {
+  transform: translateY(0);
 }

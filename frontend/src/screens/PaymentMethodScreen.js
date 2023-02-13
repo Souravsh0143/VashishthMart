@@ -68,7 +68,7 @@ export default function PaymentMethodScreen() {
               onChange={(e) => setPaymentMethod(e.target.value)}
             />
           </div> */}
-          <div className="mb-3">
+          {/* <div className="mb-3">
             <Form.Check
               type="radio"
               id="GooglePay"
@@ -77,7 +77,7 @@ export default function PaymentMethodScreen() {
               checked={paymentMethodName === 'GooglePay'}
               onChange={(e) => setPaymentMethod(e.target.value)}
             />
-          </div>
+          </div> */}
           <div className="mb-3">
             <Form.Check
               type="radio"
@@ -88,7 +88,7 @@ export default function PaymentMethodScreen() {
               onChange={(e) => setPaymentMethod(e.target.value)}
             />
           </div>
-          <div className="mb-3">
+          {/* <div className="mb-3">
             <Form.Check
               type="radio"
               id="Phonepe"
@@ -97,8 +97,8 @@ export default function PaymentMethodScreen() {
               checked={paymentMethodName === 'Phonepe'}
               onChange={(e) => setPaymentMethod(e.target.value)}
             />
-          </div>
-          <div className="mb-3">
+          </div> */}
+          {/* <div className="mb-3">
             <Form.Check
               type="radio"
               id="Paytm"
@@ -107,7 +107,7 @@ export default function PaymentMethodScreen() {
               checked={paymentMethodName === 'Paytm'}
               onChange={(e) => setPaymentMethod(e.target.value)}
             />
-          </div>
+          </div> */}
 
           {/* <div className="mb-3">
             <Form.Check

@@ -130,7 +130,12 @@ export default function PlaceOrderScreen() {
                           alt={item.name}
                           className="img-fluid rounded img-thumbnail"
                         ></img>{' '}
-                        <Link to={`/product/${item.slug}`}>{item.name}</Link>
+                        <Link
+                          className="linkstyle1"
+                          to={`/product/${item.slug}`}
+                        >
+                          {item.name}
+                        </Link>
                       </Col>
                       <Col md={3}>
                         <span>{item.quantity}</span>
@@ -157,8 +162,8 @@ export default function PlaceOrderScreen() {
                 </ListGroup.Item>
                 <ListGroup.Item>
                   <Row>
+                    <Col>Shipping</Col>
                     <Col>Free Shipping</Col>
-                    <Col>₹0.00</Col>
                   </Row>
                 </ListGroup.Item>
                 {/* <ListGroup.Item>

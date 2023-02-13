@@ -8,7 +8,11 @@ const RussianScreen = () => {
         <title>Russian</title>
       </Helmet>
       <h1>Russian</h1>
-      <p> Bhai Padh le kaam aayega. The End</p>
+      <p>
+        1. Padh Le Bhai Kuch Kaam Aayega. <br /> 2. Tere pass Russian kharidne
+        ke paise kahan se aa gaye? Saale nalle berozgar bhikhmange 20 Push-up
+        Maar.
+      </p>
     </div>
   );
 };

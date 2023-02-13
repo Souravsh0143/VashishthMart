@@ -67,7 +67,7 @@ export const payOrderEmailTemplate = (order) => {
     <tr>
     <td>${item.name}</td>
     <td align="center">${item.quantity}</td>
-    <td align="right"> $${item.price.toFixed(2)}</td>
+    <td align="right"> $₹{item.price.toFixed(2)}</td>
     </tr>
   `
     )
@@ -76,21 +76,21 @@ export const payOrderEmailTemplate = (order) => {
   <tfoot>
   <tr>
   <td colspan="2">Items Price:</td>
-  <td align="right"> $${order.itemsPrice.toFixed(2)}</td>
+  <td align="right"> $₹{order.itemsPrice.toFixed(2)}</td>
   </tr>
   <tr>
   <td colspan="2">Shipping Price:</td>
-  <td align="right"> $${order.shippingPrice.toFixed(2)}</td>
+  <td align="right"> $₹{order.shippingPrice.toFixed(2)}</td>
   </tr>
   <tr>
   <td colspan="2"><strong>Total Price:</strong></td>
-  <td align="right"><strong> $${order.totalPrice.toFixed(2)}</strong></td>
+  <td align="right"><strong> $₹{order.totalPrice.toFixed(2)}</strong></td>
   </tr>
   <tr>
   <td colspan="2">Payment Method:</td>
   <td align="right">${order.paymentMethod}</td>
   </tr>
-  </table>
+  
 
   <h2>Shipping address</h2>
   <p>

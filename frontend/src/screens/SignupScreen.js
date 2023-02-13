@@ -54,7 +54,13 @@ export default function SignupScreen() {
       <Helmet>
         <title>Sign Up</title>
       </Helmet>
-      <h1 className="my-3">Sign Up</h1>
+      <h1 className="my-3">Sign Up </h1>
+      <h6>
+        Already have an account?{' '}
+        <Link className="linkstyle1" to={`/signin?redirect=${redirect}`}>
+          Sign-In
+        </Link>{' '}
+      </h6>{' '}
       <Form onSubmit={submitHandler}>
         <Form.Group className="mb-3" controlId="name">
           <Form.Label>Name</Form.Label>
@@ -86,11 +92,30 @@ export default function SignupScreen() {
           </Form.Group>
         </Form.Group>
         <div className="mb-3">
-          <Button type="submit">Sign Up</Button>
+          <Button type="submit">Sign Up </Button>
         </div>
+        <div>
+          {' '}
+          <h3>Secure Password Tips</h3>
+          <li>
+            {' '}
+            Use at least 8 characters, a combination of numbers and letters is
+            best.
+          </li>
+          <li>
+            Do not use your name, username, school name and dictionary words.{' '}
+          </li>
+          {/* <li>Do not use the same password for multiple online accounts. </li> */}
+          <li> Include at least one symbol.</li>
+          <li> Include at least one uppercase letter.</li>
+          <li> Include at least one number.</li>
+        </div>
+        <br />
         <div className="mb-3">
-          Already have an account?{' '}
-          <Link to={`/signin?redirect=${redirect}`}>Sign-In</Link>
+          {/* <b>Already have an account? </b>
+          <Link className="linkstyle1" to={`/signin?redirect=${redirect}`}>
+            Sign-In
+          </Link> */}
         </div>
       </Form>
     </Container>

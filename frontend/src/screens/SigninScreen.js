@@ -49,6 +49,7 @@ export default function SigninScreen() {
         <title>Sign In</title>
       </Helmet>
       <h1 className="my-3">Sign In</h1>
+      {/* <h6> Your Password is encrypted. </h6> */}
       <Form onSubmit={submitHandler}>
         <Form.Group className="mb-3" controlId="email">
           <Form.Label>Email</Form.Label>
@@ -59,7 +60,9 @@ export default function SigninScreen() {
           />
         </Form.Group>
         <Form.Group className="mb-3" controlId="password">
-          <Form.Label>Password</Form.Label>
+          <Form.Label>
+            Password ( Your Password is 256-bit encrypted)
+          </Form.Label>
           <Form.Control
             type="password"
             required
@@ -67,14 +70,19 @@ export default function SigninScreen() {
           />
         </Form.Group>
         <div className="mb-3">
-          <Link to={`/forgotpassword`}> Forgot Password ? </Link>
+          <Link className="linkstyle1" to={`/forgotpassword`}>
+            {' '}
+            Forgot Password ?{' '}
+          </Link>
         </div>
         <div className="mb-3">
           <Button type="submit">Sign In</Button>
         </div>
         <div className="mb-3">
           New customer?{' '}
-          <Link to={`/signup?redirect=${redirect}`}>Create your account</Link>
+          <Link className="linkstyle1" to={`/signup?redirect=${redirect}`}>
+            Create New Account
+          </Link>
         </div>
       </Form>
     </Container>
