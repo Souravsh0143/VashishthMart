@@ -42,6 +42,7 @@ import Russian from './screens/Russian';
 import PrivacyPolicy from './screens/PrivacyPolicy';
 import Refund from './screens/Refund';
 import LoadingBar from 'react-top-loading-bar';
+import Chat from './screens/LiveChat';
 import {
   MDBFooter,
   MDBContainer,
@@ -217,6 +218,8 @@ function App() {
               <Route path="/termsofservice" element={<TermsofService />} />
               <Route path="/privacypolicy" element={<PrivacyPolicy />} />
               <Route path="/refund" element={<Refund />} />
+              <Route path="/chat" element={<Chat />} />
+
               <Route
                 path="/profile"
                 element={
