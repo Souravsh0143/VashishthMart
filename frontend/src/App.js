@@ -33,16 +33,14 @@ import ProductEditScreen from './screens/ProductEditScreen';
 import OrderListScreen from './screens/OrderListScreen';
 import UserListScreen from './screens/UserListScreen';
 import UserEditScreen from './screens/UserEditScreen';
-// import MapScreen from './screens/MapScreen';
-import ForgotPassword from './screens/ForgotPassword';
+import ForgetPasswordScreen from './screens/ForgetPasswordScreen';
+import ResetPasswordScreen from './screens/ResetPasswordScreen';
 import ContactUs from './screens/ContactUs';
 import GooglePay from './screens/GooglePayScreen';
 import TermsofService from './screens/TermsofService';
-import Russian from './screens/Russian';
 import PrivacyPolicy from './screens/PrivacyPolicy';
 import Refund from './screens/Refund';
 import LoadingBar from 'react-top-loading-bar';
-// import Chat from './screens/LiveChat';
 import {
   MDBFooter,
   MDBContainer,
@@ -211,13 +209,20 @@ function App() {
               <Route path="/search" element={<SearchScreen />} />
               <Route path="/signin" element={<SigninScreen />} />
               <Route path="/signup" element={<SignupScreen />} />
-              <Route path="/forgotpassword" element={<ForgotPassword />} />
-              <Route path="/russian" element={<Russian />} />
+              <Route
+                path="/forget-password"
+                element={<ForgetPasswordScreen />}
+              />
+              <Route
+                path="/reset-password/:token"
+                element={<ResetPasswordScreen />}
+              />
               <Route path="/contactus" element={<ContactUs />} />
               <Route path="/googlepay" element={<GooglePay />} />
               <Route path="/termsofservice" element={<TermsofService />} />
               <Route path="/privacypolicy" element={<PrivacyPolicy />} />
               <Route path="/refund" element={<Refund />} />
+
               {/* <Route path="/chat" element={<Chat />} /> */}
 
               <Route
@@ -397,7 +402,7 @@ function App() {
                         Cancellation and Refund Policy
                       </Link>
                     </p>
-                    <p>
+                    {/* <p>
                       <Link
                         to="/russian"
                         className="text-reset linkstyle"
@@ -405,7 +410,7 @@ function App() {
                       >
                         Russian
                       </Link>
-                    </p>
+                    </p> */}
                   </MDBCol>
 
                   <MDBCol md="3" lg="2" xl="2" className="mx-auto mb-4">
@@ -454,7 +459,7 @@ function App() {
                     <h6 className="text-uppercase fw-bold mb-4">Contact</h6>
                     <p>
                       <MDBIcon icon="home" className="me-2" />
-                      Panipat, PN 132013, INDIA
+                      Panipat, PN 132103, INDIA
                     </p>
                     <p>
                       <MDBIcon icon="envelope" className="me-3" />

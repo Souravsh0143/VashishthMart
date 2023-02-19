@@ -11,6 +11,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@material-ui/core": "^4.12.4",
     "bcryptjs": "^2.4.3",
     "cloudinary": "^1.28.1",
     "dotenv": "^10.0.0",

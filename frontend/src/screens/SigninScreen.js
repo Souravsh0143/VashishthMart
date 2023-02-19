@@ -8,7 +8,7 @@ import { useContext, useEffect, useState } from 'react';
 import { Store } from '../Store';
 import { toast } from 'react-toastify';
 import { getError } from '../utils';
-import ForgotPassword from './ForgotPassword';
+import ForgetPasswordScreen from './ForgetPasswordScreen';
 
 export default function SigninScreen() {
   const navigate = useNavigate();
@@ -49,6 +49,14 @@ export default function SigninScreen() {
         <title>Sign In</title>
       </Helmet>
       <h1 className="my-3">Sign In</h1>
+      <div className="mb-3">
+        <b>
+          New customer?{' '}
+          <Link className="linkstyle1" to={`/signup?redirect=${redirect}`}>
+            Create New Account
+          </Link>{' '}
+        </b>
+      </div>
       {/* <h6> Your Password is encrypted. </h6> */}
       <Form onSubmit={submitHandler}>
         <Form.Group className="mb-3" controlId="email">
@@ -70,19 +78,14 @@ export default function SigninScreen() {
           />
         </Form.Group>
         <div className="mb-3">
-          <Link className="linkstyle1" to={`/forgotpassword`}>
+          Forget Password ?
+          <Link className="linkstyle1" to={`/forget-password`}>
             {' '}
-            Forgot Password ?{' '}
+            Reset Password
           </Link>
         </div>
         <div className="mb-3">
           <Button type="submit">Sign In</Button>
-        </div>
-        <div className="mb-3">
-          New customer?{' '}
-          <Link className="linkstyle1" to={`/signup?redirect=${redirect}`}>
-            Create New Account
-          </Link>
         </div>
       </Form>
     </Container>

@@ -496,7 +496,7 @@ export default function OrderScreen() {
                         ></PayPalButtons>
                       </div>
                     )}
-                    ;{loadingPay && <LoadingBox></LoadingBox>}
+                    {loadingPay && <LoadingBox></LoadingBox>}
                   </ListGroup.Item>
                 )}
                 {userInfo.isAdmin && order.isPaid && !order.isDelivered && (
