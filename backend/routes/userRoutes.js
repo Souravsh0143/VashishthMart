@@ -70,7 +70,7 @@ userRouter.post(
       await user.save();
 
       // reset link
-      console.log(`${baseUrl()}/reset-password/${token}`);
+      // console.log(`${baseUrl()}/reset-password/${token}`);
 
       mailgun()
         .messages()
