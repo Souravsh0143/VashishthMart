@@ -463,10 +463,11 @@ function App() {
                     </p>
                     <p>
                       <MDBIcon icon="envelope" className="me-3" />
-                      help.vashishthmart@gmail.com
+                      main.vashishthmart@gmail.com
                     </p>
                     <p>
-                      <MDBIcon icon="phone" className="me-3" /> +918708886015
+                      <MDBIcon icon="phone" className="me-3" /> +919870000000
+                      (VIP NUMBER)
                     </p>
                     <p>
                       <MDBIcon icon="print" className="me-3" />{' '}
